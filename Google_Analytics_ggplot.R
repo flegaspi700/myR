@@ -35,3 +35,30 @@ ggplot(data=diamonds) +
 
 ggplot(data=diamonds) +
   geom_bar(mapping = aes(x=cut, fill=clarity))
+
+ggplot(data=diamonds) +
+  geom_point(mapping = aes(x=carat, y=price, color=cut, alpha=cut)) +
+  facet_wrap(~cut)
+
+ggplot(data=diamonds) +
+  geom_bar(mapping = aes(x=cut, fill=clarity)) +
+  facet_wrap(~clarity)
+
+ggplot(data=diamonds) +
+  geom_bar(mapping = aes(x=cut, fill=clarity)) +
+  #facet_grid(~clarity) +
+  labs(title="Diamonds", subtitle = "more diamonds") +
+  annotate("text", x=2, y=15000, label="Here I Am") +
+  theme(axis.text.x = element_text(angle = 45))
+
+ggsave("Diamonds Diamonds.png")
+
+ggplot(data = hotel_bookings) +
+  geom_bar(mapping = aes(x = distribution_channel)) +
+  facet_wrap(~deposit_type) +
+  theme(axis.text.x = element_text(angle = 45))
+
+ggplot(data = hotel_bookings) +
+  geom_bar(mapping = aes(x = distribution_channel)) +
+  facet_grid(~deposit_type) +
+  theme(axis.text.x = element_text(angle = 45))
