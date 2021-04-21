@@ -15,3 +15,23 @@ View(player_df)
 
 ggplot(data=player_df) + geom_point(mapping = aes(x=team_pace, y=MPG))
 
+data("diamonds")
+View(diamonds)
+
+ggplot(data=diamonds) +
+  geom_point(mapping = aes(x=carat, y=price, color=cut, alpha=cut))
+
+ggplot(data=diamonds) +
+  geom_point(mapping = aes(x=carat, y=price),color="brown")
+
+
+ggplot(data=diamonds) +
+  geom_smooth(mapping = aes(x=carat, y=price)) +
+  geom_point(mapping = aes(x=carat, y=price))
+
+
+ggplot(data=diamonds) +
+  geom_jitter(mapping = aes(x=carat, y=price, color=cut, alpha=cut))
+
+ggplot(data=diamonds) +
+  geom_bar(mapping = aes(x=cut, fill=clarity))
