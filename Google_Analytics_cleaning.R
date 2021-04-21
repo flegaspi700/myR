@@ -1,3 +1,4 @@
+install.packages("tidyverse")
 install.packages("here")
 install.packages("skimr")
 install.packages("janitor")
@@ -5,6 +6,7 @@ install.packages("dplyr")
 install.packages("tidyr")
 install.packages("palmerpenguins")
 
+library("tidyverse")
 library("here")
 library("skimr")
 library("janitor")
