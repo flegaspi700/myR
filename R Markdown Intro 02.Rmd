@@ -1,0 +1,40 @@
+---
+title: "R Markdown Intro 02"
+author: "Fred"
+date: "4/22/2021"
+output: html_document
+---
+
+## Setting up environment
+ notes: Loading 'tidyverse' and 'palmerpenguins' packages.
+ 
+```{r loading packages}
+#install.packages("tidyverse")
+#install.packages("palmerpenguins")
+#install.packages("rmarkdown")
+#install.packages("vitae")
+```
+
+```{r loading libraries}
+library(ggplot2)
+
+data("diamonds")
+#View(diamonds)
+```
+
+
+```{r ggplot for diamonds visualization}
+ggplot(data=diamonds) +
+  geom_point(mapping = aes(x=carat, y=price, color=cut, alpha=cut))
+```
+
+
+```{r ggplot for diamons viz 2}
+ggplot(data=diamonds) +
+  geom_bar(mapping = aes(x=cut, fill=clarity)) +
+  #facet_grid(~clarity) +
+  labs(title="Diamonds", subtitle = "more diamonds") +
+  annotate("text", x=2, y=15000, label="Here I Am") +
+  theme(axis.text.x = element_text(angle = 45))
+```
+
